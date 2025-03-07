@@ -5,30 +5,40 @@
 
 using namespace std;
 
-int Main() {
-    Menu();
-    return 0;
-}
-
-void Menu() {
-    cout << "Calculatrix Main Menu";
-    cout << "variable - Opens Variable Menu";
-    cout << "calculate - Opens Calculation Engine";
-    cout << "probabilities - Opens Probability Engine";
-}
-
 void Pythagoras() {
-    cout << "standard - A^2 + B^2 = C^2";
-    cout << "reverse - A^2 - C^2 = B^2";
+    cout << "standard - A^2 + B^2 = C^2" << "\n";
+    cout << "reverse - A^2 - C^2 = B^2" << "\n";
     cout << "Command:";
-    cin >> string x;
-    if (x >> "standard") {
+    string command;
+    cin >> command;
+    if (command == "standard") {
         long double a, b, c;
         cout << "A Value:";
         cin >> a;
         cout << "B Value:";
         cin >> b;
-        c = sqrt(pow(2, a) + pow(2, b))
-            cout << "Hypotenuse Length: " << c;
+        c = sqrt(pow(2, a) + pow(2, b));
+        cout << "Hypotenuse Length: " << c;
     }
+    return;
+}
+
+void Menu() {
+    cout << "Calculatrix Main Menu" << "\n";
+    cout << "variable - Opens Variable Menu" << "\n";
+    cout << "calculate - Opens Calculation Engine" << "\n";
+    cout << "probabilities - Opens Probability Engine" << "\n";
+    cout << "pythagoras - Opens Pythagoras Calculations" << "\n";
+    string command;
+    cout << "Command: ";
+    cin >> command;
+    if (command == "pythagoras") {
+        Pythagoras();
+    }
+    Menu();
+}
+
+int main() {
+    Menu();
+    return 0;
 }
