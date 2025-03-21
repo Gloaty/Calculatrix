@@ -3,6 +3,7 @@
 #include <iostream>
 #include <cmath>
 #include <iomanip>
+#include <unordered_map>
 
 using namespace std;
 
@@ -24,6 +25,13 @@ void Settings() {
 		cout << "Currently under development" << "\n";
     }
     return;
+}
+
+void Variables() {
+    long double variableX, variableY, variableZ, variableA, variableB, variableC, variableD, variableE, variableF;
+    cout << "\n";
+    cout << "Variable Menu" << "\n";
+    cout << "𝑥 = " << variableX << "\n";
 }
 
 void Pythagoras() {
@@ -72,7 +80,10 @@ void Menu() {
     string command;
     cout << "Command: ";
     cin >> command;
-    if (command == "pythagoras") {
+    if (command == "variable") {
+        Variables();
+    } 
+    else if (command == "pythagoras") {
         Pythagoras();
     }
     else if (command == "settings") {
