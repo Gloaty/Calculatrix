@@ -7,6 +7,24 @@
 
 using namespace std;
 
+void OSIdentify() {
+    cout << "Operating System Detected - ";
+    #ifdef _WIN32
+        cout << "Microsoft Windows" << "\n";
+    #elif __linux__
+        cout << "Linux Distro" << "\n";
+    #elif  __APPLE__
+        cout << "MacOS" << "\n";
+    #elif __unix
+        cout << "Generic Unix" << "\n";
+    #elif __FreeBSD__
+        cout << "FreeBSD" << "\n";
+    #else
+        cout << "Unknown" << "\n";
+    #endif
+    cout << "\n";
+}
+
 void Settings() {
 	cout << "Settings Menu" << "\n";
 	cout << "precision - Sets the precision of the output" << "\n";
@@ -71,6 +89,7 @@ void Pythagoras() {
 
 void Menu() {
     system("cls");
+    OSIdentify();
     cout << "Calculatrix Main Menu" << "\n";
     cout << "variable - Opens Variable Menu" << "\n";
     cout << "calculate - Opens Calculation Engine" << "\n";
